@@ -7,7 +7,7 @@ from redbot.core import commands
 
 
 class snipe(commands.Cog):
-    def __init__(self, bot: Red) -> None
+    def __init__(self, bot: Red) -> None:
         self.bot = bot
         self.last_msg = None
 
