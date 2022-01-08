@@ -2,11 +2,12 @@ from discord.ext import commands
 import discord
 import time
 from discord.member import Member
+from redbot.core.bot import Red
 from redbot.core import commands
 
 
 class snipe(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: Red) -> None
         self.bot = bot
         self.last_msg = None
 
@@ -33,7 +34,7 @@ class snipe(commands.Cog):
         await ctx.send(embed=embed)
 
 class esnipe(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: Red) -> None:
         self.bot = bot
         self.old_msg= None
         self.new_msg= None
