@@ -4,6 +4,12 @@ import time
 from discord.member import Member
 from redbot.core import commands
 
+def setup(bot: commands.Bot):
+        bot.add_cog(snipe(bot))
+        bot.add_cog(esnipe(bot))
+        #bot.add_cog(rsnipe(bot))
+
+
 class snipe(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -25,7 +31,7 @@ class snipe(commands.Cog):
         channel = self.last_msg.channel
 
         embed= discord.Embed(title=f"Message Content (Sent <t:{msgtime}:R>)",description=f"{content}",colour=author.colour)
-        embed.set_author(name=author,icon_url=author.display_avatar)
+        embed.set_author(name=author,icon_url=author.avatar_url)
         embed.add_field(name="Channel", value=channel.mention)
         embed.add_field(name="Deleted_at", value=f"<t:{msgtime}:R>")
         
@@ -56,7 +62,7 @@ class esnipe(commands.Cog):
         channel = self.new_msg.channel
 
         embed= discord.Embed(title=f"Message Content",description=f"**Before:**\n{old_content} (<t:{old_msgtime}:R>)\n**After:**\n{new_content} (<t:{new_msgtime}:R>)",colour=author.colour)
-        embed.set_author(name=author,icon_url=author.display_avatar)
+        embed.set_author(name=author,icon_url=author.avatar_url)
         embed.add_field(name="Channel", value=channel.mention)
         
         await ctx.send(embed=embed)
@@ -65,15 +71,12 @@ class esnipe(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         self.lastmsg= None
-
     @commands.Cog.listener()
     async def on_raw_message_delete(self,payload: discord.RawMessageDeleteEvent):
         self.lastmsg=payload
-
     @commands.command(name="rsnipe")
     async def rsnipe(self, ctx: commands.Context):
         if not self.lastmsg:
             await ctx.send("Uhh nothing to see here")
             return #so that rest of it doesnt execute
-
         await ctx.send(f"Channel - {self.lastmsg.channel_id}\nMessageid - {self.lastmsg.message_id}\nMessage - {self.lastmsg.cached_message}")"""
