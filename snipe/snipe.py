@@ -4,11 +4,6 @@ import time
 from discord.member import Member
 from redbot.core import commands
 
-def setup(bot: commands.Bot):
-        bot.add_cog(snipe(bot))
-        bot.add_cog(esnipe(bot))
-        #bot.add_cog(rsnipe(bot))
-
 
 class snipe(commands.Cog):
     def __init__(self, bot: commands.Bot):
