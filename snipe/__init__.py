@@ -7,5 +7,4 @@ from redbot.core.bot import Red
 
 async def setup(bot: Red) -> None:
      bot.add_cog(snipe(bot))
-     bot.add_cog(esnipe(bot))
      #bot.add_cog(rsnipe(bot))
