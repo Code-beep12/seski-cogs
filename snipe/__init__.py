@@ -3,8 +3,9 @@ import discord
 import time
 from discord.member import Member
 from .snipe import snipe
+from redbot.core.bot import Red
 
-def setup(bot: commands.Bot):
-        bot.add_cog(snipe(bot))
-        bot.add_cog(esnipe(bot))
-        #bot.add_cog(rsnipe(bot))
+async def setup(bot: Red) -> None:
+     bot.add_cog(snipe(bot))
+     bot.add_cog(esnipe(bot))
+     #bot.add_cog(rsnipe(bot))
