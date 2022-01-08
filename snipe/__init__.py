@@ -3,6 +3,7 @@ import discord
 import time
 from discord.member import Member
 from .snipe import snipe
+from .snipe import esnipe
 from redbot.core.bot import Red
 
 async def setup(bot: Red) -> None:
