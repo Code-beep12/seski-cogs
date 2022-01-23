@@ -1,0 +1,11 @@
+{
+    "name" : "snipe",
+    "author" : ["SeskiBoi"],
+    "short" : "Snipe commands",
+    "description" : "Very useful command ",
+    "install_msg" : "Thanks for installing Snipe.",
+    "requirements" : [],
+    "tags" : ["snipe", "esnipe"],
+    "permissions" : ["read_message"],
+    "end_user_data_statement": "This cog does not persistently store data or metadata about users."
+}
