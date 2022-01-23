@@ -1,0 +1,8 @@
+discord.py
+PyNaCl
+mysql-connector-python
+python-dotenv
+gTTS
+asyncio
+spotdl
+cloudinary

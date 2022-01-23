@@ -1,0 +1,7 @@
+.env
+TODO
+test.py
+*.swp
+*.swo
+*.mp3
+.spotdl-cache
